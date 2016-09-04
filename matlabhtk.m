@@ -22,7 +22,7 @@ function varargout = matlabhtk(varargin)
 
 % Edit the above text to modify the response to help matlabhtk
 
-% Last Modified by GUIDE v2.5 04-Sep-2016 17:41:12
+% Last Modified by GUIDE v2.5 04-Sep-2016 22:30:41
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -87,6 +87,7 @@ function HTKtrain_Callback(hObject, eventdata, handles)
         fprintf(fid, '%.0f %.0f ssil\n%.0f %.0f %s\n%.0f %.0f sp\n%.0f %.0f %s\n%.0f %.0f sp\n%.0f %.0f %s\n%.0f %.0f ssil',t1,t2,t3,t4,popupmenu1value,t5,t6,t7,t8,popupmenu2value,t9,t10,t11,t12,popupmenu3value,t13,t14);
         fclose(fid);
         dos('auto.bat');
+        h = msgbox('Training done','Success');
     catch 
          errordlg('Please Finish the Background Noise Detection First','System Error');
     end
@@ -243,10 +244,14 @@ function Delete_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in Start_recognition.
 function Start_recognition_Callback(hObject, eventdata, handles)
-if exist('E:\matlabhtk\hmmlist\hmm47\hmmall', 'file')
-    recognizedata(handles.com,100);
+if exist('handles.com' , 'var')
+    if exist('E:\matlabhtk\hmmlist\hmm47\hmmall', 'file') 
+        recognizedata(handles.com,100);
+    else
+        errordlg('Please check if the Hidden Markov Models exists!','System Error');
+    end
 else
-     errordlg('Please check if the Hidden Markov Models exists!','System Error');
+    errordlg('Please check the connection of Shimmer3!','System Error');
 end
 % hObject    handle to Start_recognition (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -269,7 +274,7 @@ function figure1_CreateFcn(hObject, eventdata, handles)
 
 % --- Executes on button press in Use.
 function Use_Callback(hObject, eventdata, handles)
-    presetaveragegyro = 50;
+    presetaveragegyro = 800;
     handles.presetaveragegyro = presetaveragegyro;
     guidata(hObject, handles);
     h = msgbox('Pre-set background noise setting Completed','Success');
@@ -332,5 +337,13 @@ function HELP_Callback(hObject, eventdata, handles)
     url = 'http://cedrus.com/support/rb_series/tn1045_usbport_win.htm';
     web(url);
 % hObject    handle to HELP (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in Recover.
+function Recover_Callback(hObject, eventdata, handles)
+    dos('recover.bat');
+% hObject    handle to Recover (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)

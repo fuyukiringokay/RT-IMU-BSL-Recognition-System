@@ -146,6 +146,7 @@ if (shimmer.connect)                                                       % TRU
            'position',[200 200 100 100],...
            'fontsize',15);
         pause(1);
+        close;
         
         DATA = dlmread('traindata.txt');
         writehtk('htkdata',DATA,0.01953125,9);
@@ -250,15 +251,6 @@ if (shimmer.connect)                                                       % TRU
                 continue;
             end
         end
-
-        u1 = uicontrol('Parent',f,...
-           'Style', 'text',...
-           'String', 'TRAING END',... 
-           'Units','pixels',...
-           'position',[200 200 100 100],...
-           'fontsize',15);
-        pause(1);
-        close;
         
     shimmer.disconnect;                                                    % Disconnect from shimmer
         

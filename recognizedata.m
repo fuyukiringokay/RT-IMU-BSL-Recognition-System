@@ -120,8 +120,7 @@ if (shimmer.connect)                                                       % TRU
             [newData,signalNameArray,signalFormatArray,signalUnitArray] = shimmer.getdata('c');   % Read the latest data from shimmer data buffer, signalFormatArray defines the format of the data and signalUnitArray the unit
                   
             if ~isempty(newData)                                           % TRUE if new data has arrived
-                    tic;
-                    updatefile('testdata.txt', 'testdata_copy.txt');
+                   updatefile('testdata.txt', 'testdata_copy.txt');
                     dlmwrite('testdata_copy.txt', newData(:,[2:4,6:11]), '-append','precision',16,'newline', 'pc');
                     DATA = dlmread('testdata_copy.txt');
                     writehtk('recogndat',DATA,0.01953125,9);
@@ -129,7 +128,6 @@ if (shimmer.connect)                                                       % TRU
                     FILE=textread ('result.mlf','%s');
                     if ~isempty(handles)
                          set (handles.text7, 'string',FILE(end-6,:));
-                         toc
                     end
 
 
