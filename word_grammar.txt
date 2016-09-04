@@ -1,0 +1,2 @@
+$word=TK|HAU|HE|SR|GM|GA|GN|sp|ssil;
+(ssil<$word>ssil)
