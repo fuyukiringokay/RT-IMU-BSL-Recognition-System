@@ -244,15 +244,12 @@ function Delete_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in Start_recognition.
 function Start_recognition_Callback(hObject, eventdata, handles)
-if exist('handles.com' , 'var')
     if exist('E:\matlabhtk\hmmlist\hmm47\hmmall', 'file') 
         recognizedata(handles.com,100);
     else
         errordlg('Please check if the Hidden Markov Models exists!','System Error');
     end
-else
-    errordlg('Please check the connection of Shimmer3!','System Error');
-end
+ 
 % hObject    handle to Start_recognition (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
