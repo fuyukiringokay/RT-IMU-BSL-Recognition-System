@@ -13,8 +13,7 @@ The programme a Shimmer3 based BSL recognition system aimming to recognize 7 com
 [6]Sorry
 [7]Thanks
 
-For best performance, please put the file 'RT-IMU-BSL-Recognition-System-master' into the main path of E: 
-For example, E:\RT-IMU-BSL-Recognition-System-master and rename "RT-IMU-BSL-Recognition-System-master" into "matlabhtk".
+For best performance, please put the file 'RT-IMU-BSL-Recognition-System-master' into the main path of E:. For example, E:\RT-IMU-BSL-Recognition-System-master and rename "RT-IMU-BSL-Recognition-System-master" into "matlabhtk".
 
 For any questions, do contact fuyukiringokay@gmail.com
 
