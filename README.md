@@ -4,7 +4,7 @@ Programme type: MSc final dissertation
 Programme software: MatLab
 Additional software required: Realterm (http://realterm.sourceforge.net/), HTK toolkit (http://htk.eng.cam.ac.uk/)
 
-The programme a Shimmer3 based BSL recognition system aimming to recognize 7 commonly used greeting signings
+The programme is a Shimmer3 based BSL recognition system aimming to recognize 7 commonly used greeting signings
 [1]Hello
 [2]Good Morning
 [3]Good Afternoon
